@@ -64,13 +64,13 @@
     </head>
     <body>
         <section>
-            <button id="main_btn" onclick="sendMessage('');" hidden>Send «Hello, World!»</button>
+            <button id="main_btn" onclick="sendMessage('');">Close WebApp, send data</button>
             <button id="with_webview_btn" onclick="sendMessage('', true);">
         
                 <h1>Hello world</h1>
                 <h2>Hello WebApp</h2>
             </button>
-        <button id="count_button">Проверяем sendData</button>
+        <button id="count_button">Кнопка не нажата</button>
         </section>
 
         <section>
@@ -83,9 +83,6 @@
         var initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
         data = document.getElementById("data")
         data.innerText = decodeURI(initData) 
-        function webviewClose() {
-        Telegram.WebApp.close();
-        }
     </script>
     
     </body>
@@ -97,7 +94,7 @@
             count++;
             btn.innerText = String(count);
             Telegram.WebApp.sendData(count);
-        }
+        };
         
         const submit_button = document.getElementById("with_webview_btn");
         const button = document.getElementById("with_webview_btn")
@@ -107,6 +104,13 @@
             xhr.onload = function () {
             console.log(xhr.str);
         };
+
+        const main_button = document.getElementById('main_btn');
+        main_button.onclick = function(){
+            main_button.innerText = 'Sending data...'
+            Telegram.WebApp.sendData(count);
+            Telegram.WebApp.close;
+        }
         }
     </script>
 </html>
