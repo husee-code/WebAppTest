@@ -83,7 +83,7 @@
         var initData = Telegram.WebApp.initData || '';
         var initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
         data = document.getElementById("data")
-        data.innerText = initData
+        data.innerText = decodeURI(initData) 
         function webviewClose() {
         Telegram.WebApp.close();
         }
@@ -106,7 +106,7 @@
             var xhr = new XMLHttpRequest();
             xhr.open('GET', '/API/api.html', true);
             xhr.onload = function () {
-            console.log(xhr.responseText)
+            console.log(xhr.str)
         };
         }
     </script>
