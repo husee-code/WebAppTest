@@ -99,10 +99,11 @@
         }
       }
       dataBtn.onclick = function(){
-        let date = document.querySelector("#date-0a8c");
+        let date = document.querySelector("#date-0a8c").value;
         if (date){
           tg.sendData(date)
-	}
+        }
+	
       }
     </script>
   </body>
