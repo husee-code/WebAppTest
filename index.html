@@ -90,7 +90,7 @@
       console.log(tg);
       console.log(window.Telegram);
       document.querySelector("#signButton").onclick = function(){
-        tg.sendData(tg.WebAppUser.id); 
+        tg.sendData(tg.initDataUnsafe.user.id); 
       }
     </script>
   </body>
