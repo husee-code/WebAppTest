@@ -87,8 +87,9 @@
     </section>
     <script>
       let tg = window.Telegram.WebApp;
+      console.log(tg.WebAppUser.id);
       document.querySelector("#signButton").onclick = function(){
-        tg.sendData(tg.initData); 
+        tg.sendData(tg.WebAppUser.id); 
       }
     </script>
   </body>
