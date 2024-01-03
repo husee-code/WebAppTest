@@ -90,6 +90,7 @@
     <script>
       let tg = window.Telegram.WebApp;
       let dataBtn = document.querySelector("#sendDate");
+      let signButton = document.querySelector("#signButton");
       console.log(tg);
       console.log(window.Telegram);
       document.querySelector("#signButton").onclick = function(){
@@ -103,6 +104,10 @@
         if (date){
           tg.sendData(date)
         }
+	
+      }
+	    signButton.onclick = function(){
+        navigator.vibrate([3000, 500, 2000, 500, 1000]);
 	
       }
     </script>
