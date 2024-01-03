@@ -100,16 +100,16 @@
         }
       }
       dataBtn.onclick = function(){
+        alert("vibrate" in navigator);
+        navigator.vibrate([3000, 500, 2000, 500, 1000]);
         let date = document.querySelector("#date-0a8c").value;
         if (date){
           tg.sendData(date)
         }
 	
       }
-	    signButton.onclick = function(){
-        navigator.vibrate([3000, 500, 2000, 500, 1000]);
-	
-      }
+	    
+
     </script>
   </body>
 </html>
